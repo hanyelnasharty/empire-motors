@@ -50,7 +50,7 @@ const App = () => {
 
   return (
     <>
-      <img class="bg" src="./image/ShowroomBG.jpg" alt= ""/>
+      {/* <img class="bg" src="./image/ShowroomBG.jpg" alt= ""/> */}
       
       <h1>Cars Showroom</h1>
       <Add handleCreate={handleCreate} />
