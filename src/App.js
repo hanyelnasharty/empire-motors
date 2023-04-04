@@ -50,10 +50,10 @@ const App = () => {
 
   return (
     <>
-      {/* <img class="bg" src="./image/ShowroomBG.jpg" alt= ""/> */}
-      
-      <h1>Cars Showroom</h1>
-      <Add handleCreate={handleCreate} />
+      <nav>
+        <img src='../images/logo.png' alt='logo' className='logo'/>
+        <Add handleCreate={handleCreate} />
+      </nav>
       <div className='container'>
         {cars.map((cars) => {
           return (
@@ -61,7 +61,7 @@ const App = () => {
               <div className='home'>
                 <Cars cars={cars} />
                 <Edit cars={cars} handleEdit={handleEdit} />
-                <button onClick={() => { handleDelete(cars) }}>Delete</button>
+                <button onClick={() => { handleDelete(cars) }} className="delete">Delete</button>
               </div>
             </>
           )

@@ -18,7 +18,7 @@ const Add = (props) => {
 
     return (
         <>
-        <details>
+        <details id='add'>
             <summary className='add'>Add Cars</summary>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="make">Make: </label>
