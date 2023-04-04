@@ -49,23 +49,25 @@ const App = () => {
   }, [])
 
   return (
-  <>
-    <h1>Cars Showroom</h1>
-    <Add handleCreate={handleCreate}/>
-    <div className='container'>
-    {cars.map((cars) => {
-      return (
-        <>
-          <div className='home'>
-            <Cars cars={cars} />
-            <Edit cars={cars} handleEdit={handleEdit} />
-            <button onClick={ () => {handleDelete(cars) } }>Delete</button>
-          </div>
-        </>
-      )
-    })}
-    </div>
-  </>
+    <>
+      <img class="bg" src="./image/ShowroomBG.jpg" alt= ""/>
+      
+      <h1>Cars Showroom</h1>
+      <Add handleCreate={handleCreate} />
+      <div className='container'>
+        {cars.map((cars) => {
+          return (
+            <>
+              <div className='home'>
+                <Cars cars={cars} />
+                <Edit cars={cars} handleEdit={handleEdit} />
+                <button onClick={() => { handleDelete(cars) }}>Delete</button>
+              </div>
+            </>
+          )
+        })}
+      </div>
+    </>
   )
 }
 
