@@ -9,14 +9,14 @@ const App = () => {
   const [cars, setCars] = useState([])
 
   const getCars = () => {
-    axios.get('http://localhost:3000/cars')
+    axios.get('https://used-cars-gallery.herokuapp.com/cars')
     .then((response) => setCars(response.data), (err) => console.log(err))
     .catch((error) => console.log(error))
   }
 
   const handleCreate = (data) => {
     console.log(data)
-    axios.post('http://localhost:3000/cars', data)
+    axios.post('https://used-cars-gallery.herokuapp.com/cars', data)
     .then((response) => {
       console.log(response)
       let newCars = [...cars, response.data]
@@ -25,7 +25,7 @@ const App = () => {
   }
 
   const handleDelete = (deletedCars) => {
-    axios.delete('http://localhost:3000/cars/' + deletedCars._id)
+    axios.delete('https://used-cars-gallery.herokuapp.com/cars/' + deletedCars._id)
     .then((response) => {
       let newCars = cars.filter((cars) => {
         return cars._id !== deletedCars._id
@@ -35,7 +35,7 @@ const App = () => {
   }
 
   const handleEdit = (data) => {
-    axios.put('http://localhost:3000/cars/' + data._id, data)
+    axios.put('https://used-cars-gallery.herokuapp.com/cars/' + data._id, data)
     .then((response) => {
       let newCars = setCars.map((cars) => {
         return cars._id !== data._id ? cars : data
